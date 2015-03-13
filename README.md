@@ -1,6 +1,8 @@
 Colorblinding
 ==========
 
+Developed by <a href='https://github.com/LeonardoCardoso' target='_blank'>@LeonardoCardoso</a>. 
+
 An extension for Google Chrome (and Chromium) that simulates the website as a color vision impaired person would see. 
 So you, as a developer, can adjust the colors for their accessibility.
 
