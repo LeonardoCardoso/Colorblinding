@@ -1,0 +1,18 @@
+body {
+    font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+    font-size: 100%;
+}
+
+.inputRadio {
+    margin-right: 10px;
+}
+
+.label {
+    width: 300px;
+    cursor: pointer;
+    margin: 10px 0px 10px 0px;
+}
+
+.label label {
+    cursor: pointer;
+}

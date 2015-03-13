@@ -3,11 +3,30 @@
   "name": "Colorblinding - Accessibility Tool for Development",
   "description": "This extension simulates the website as a color vision impaired person would see. So you, as a developer, can adjust the colors for their accessibility.",
   "version": "1.0",
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "jquery.min.js",
+      "background.js"
+    ]
+  },
   "browser_action": {
     "default_icon": "icon.png",
-    "default_popup": "home.html"
+    "default_popup": "popup.html"
   },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "matches": ["<all_urls>"],
+      "js": [
+        "jquery.min.js",
+        "popup.js"
+      ]
+    }
+  ],
   "permissions": [
-    "activeTab"
+    "tabs",
+    "http://*/*",
+    "https://*/*"
   ]
 }
