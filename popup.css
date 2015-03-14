@@ -8,11 +8,16 @@ body {
 }
 
 .label {
-    width: 300px;
+    width: 400px;
     cursor: pointer;
-    margin: 10px 0px 10px 0px;
+    margin: 10px 0;
 }
 
 .label label {
     cursor: pointer;
+}
+
+img.bottom {
+    width: 250px;
+    margin: auto 75px;
 }

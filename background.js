@@ -1,226 +1,46 @@
-// --- Protanopia --- //
+function appendSVG(document) {
 
-function changeToProtanopia(document, type) {
-    revertColors(type);
+    /*
+     'Normal':[1,0,0,0,0, 0,1,0,0,0, 0,0,1,0,0, 0,0,0,1,0, 0,0,0,0,1],
+     'Protanopia':[0.567,0.433,0,0,0, 0.558,0.442,0,0,0, 0,0.242,0.758,0,0, 0,0,0,1,0, 0,0,0,0,1],
+     'Protanomaly':[0.817,0.183,0,0,0, 0.333,0.667,0,0,0, 0,0.125,0.875,0,0, 0,0,0,1,0, 0,0,0,0,1],
+     'Deuteranopia':[0.625,0.375,0,0,0, 0.7,0.3,0,0,0, 0,0.3,0.7,0,0, 0,0,0,1,0, 0,0,0,0,1],
+     'Deuteranomaly':[0.8,0.2,0,0,0, 0.258,0.742,0,0,0, 0,0.142,0.858,0,0, 0,0,0,1,0, 0,0,0,0,1],
+     'Tritanopia':[0.95,0.05,0,0,0, 0,0.433,0.567,0,0, 0,0.475,0.525,0,0, 0,0,0,1,0, 0,0,0,0,1],
+     'Tritanomaly':[0.967,0.033,0,0,0, 0,0.733,0.267,0,0, 0,0.183,0.817,0,0, 0,0,0,1,0, 0,0,0,0,1],
+     'Achromatopsia':[0.299,0.587,0.114,0,0, 0.299,0.587,0.114,0,0, 0.299,0.587,0.114,0,0, 0,0,0,1,0, 0,0,0,0,1],
+     'Achromatomaly':[0.618,0.320,0.062,0,0, 0.163,0.775,0.062,0,0, 0.163,0.320,0.516,0,0,0,0,0,1,0,0,0,0,0]
+     */
 
-    invertingColors(document, type);
+    var svg = '<svg id="colorBlindSVG" version="1.1" xmlns="http://www.w3.org/2000/svg" baseProfile="full"> <filter id="protanopia"> <feColorMatrix type="matrix" values="0.567, 0.433, 0, 0, 0, 0.558, 0.442, 0, 0, 0, 0, 0.242, 0.758, 0, 0, 0, 0, 0, 1, 0" in="SourceGraphic" /> </filter> <filter id="protanomaly"> <feColorMatrix type="matrix" values="0.817,0.183,0,0,0 0.333,0.667,0,0,0 0,0.125,0.875,0,0 0,0,0,1,0" in="SourceGraphic" /> </filter> <filter id="deuteranopia"> <feColorMatrix type="matrix" values="0.625,0.375,0,0,0 0.7,0.3,0,0,0 0,0.3,0.7,0,0 0,0,0,1,0" in="SourceGraphic" /> </filter> <filter id="deuteranomaly"> <feColorMatrix type="matrix" values="0.8,0.2,0,0,0 0.258,0.742,0,0,0 0,0.142,0.858,0,0 0,0,0,1,0" in="SourceGraphic" /> </filter> <filter id="tritanopia"> <feColorMatrix type="matrix" values="0.95,0.05,0,0,0 0,0.433,0.567,0,0 0,0.475,0.525,0,0 0,0,0,1,0" in="SourceGraphic" /> </filter> <filter id="tritanomaly"> <feColorMatrix type="matrix" values="0.967,0.033,0,0,0 0,0.733,0.267,0,0 0,0.183,0.817,0,0 0,0,0,1,0" in="SourceGraphic" /> </filter> <filter id="achromatopsia"> <feColorMatrix type="matrix" values="0.299,0.587,0.114,0,0 0.299,0.587,0.114,0,0 0.299,0.587,0.114,0,0 0,0,0,1,0" in="SourceGraphic" /> </filter> <filter id="achromatomaly"> <feColorMatrix type="matrix" values="0.618,0.320,0.062,0,0 0.163,0.775,0.062,0,0 0.163,0.320,0.516,0,0 0,0,0,1,0" in="SourceGraphic" /> </filter> </svg>';
+
+    var blockColorblindContent = document.getElementById("blockColorblindContent");
+    if (blockColorblindContent !== undefined && blockColorblindContent !== null) {
+        blockColorblindContent.parentNode.removeChild(blockColorblindContent);
+    }
+
+    var iDiv = document.createElement('div');
+    iDiv.id = 'blockColorblindContent';
+    iDiv.innerHTML = svg;
+    document.getElementsByTagName('body')[0].appendChild(iDiv);
 }
 
-function revertProtanopia(document) {
+function changeColors(info) {
+    appendSVG(document);
+    revertColors(document);
 
-}
-
-// ------ //
-
-
-// --- Deuteranopia --- //
-
-function changeToDeuteranopia(document, type) {
-    revertColors(type);
-
-    invertingColors(document, type);
-}
-
-function revertDeuteranopia(document) {
-
-}
-
-// ------ //
-
-
-// --- Tritanopia --- //
-
-function changeToTritanopia(document, type) {
-    revertColors(type);
-
-    invertingColors(document, type);
-}
-
-function revertTritanopia(document) {
-
-}
-
-// ------ //
-
-
-// --- Protanomaly --- //
-
-function changeToProtanomaly(document, type) {
-    revertColors(type);
-
-    invertingColors(document, type);
-}
-
-function revertProtanomaly(document) {
-
-}
-
-// ------ //
-
-
-// --- Deuteranomaly --- //
-
-function changeToDeuteranomaly(document, type) {
-    revertColors(type);
-
-    invertingColors(document, type);
-}
-function revertDeuteranomaly(document) {
-
-}
-
-// ------ //
-
-
-// --- Tritanomaly --- //
-
-function changeToTritanomaly(document, type) {
-    revertColors(type);
-
-    invertingColors(document, type);
-}
-
-function revertTritanomaly(document) {
-
-}
-
-// ------ //
-
-
-// --- Achromatopsia --- //
-
-function changeToAchromatopsia(document, type) {
-    revertColors(type);
-
-    var css = 'html {-webkit-filter: grayscale(100%);' +
-        '-moz-filter: grayscale(100%);' +
-        '-o-filter: grayscale(100%);' +
-        '-ms-filter: grayscale(100%); }';
+    var type = info.typeSelected;
+    var css = 'html {' +
+        'filter: url(#' + type + '); -webkit-filter: url(#' + type + '); -moz-filter: url(#' + type + '); -o-filter: url(#' + type + '); -ms-filter: url(#' + type + '); ' +
+        '}';
 
     applyingStyle(document, css);
 }
 
-function revertAchromatopsia(document) {
-    var css = 'html {-webkit-filter: grayscale(0%); ' +
-        '-moz-filter: grayscale(0%); ' +
-        '-o-filter: grayscale(0%); ' +
-        '-ms-filter: grayscale(0%); }';
-
+function revertColors(document) {
+    var css = 'html { -webkit-filter: none; -moz-filter: none; -o-filter: none; -ms-filter: none; }';
     applyingStyle(document, css);
 }
-
-// ------ //
-
-
-// --- Achromatonomaly --- //
-
-function changeToAchromatomaly(document, type) {
-    revertColors(type);
-
-    invertingColors(document, type);
-}
-
-function revertAchromatomaly(document) {
-
-}
-
-// ------ //
-
-function invertingColors(document, type) {
-    var css = 'html {-webkit-filter: invert(100%);' +
-            '-moz-filter: invert(100%);' +
-            '-o-filter: invert(100%);' +
-            '-ms-filter: invert(100%); }',
-        head = document.getElementsByTagName('head')[0],
-        style = document.createElement('style');
-
-    if (!window.counter) {
-        window.counter = 1;
-    } else {
-        window.counter++;
-        if (window.counter % 2 == 0) {
-            var css = 'html {-webkit-filter: invert(0%); -moz-filter: invert(0%); -o-filter: invert(0%); -ms-filter: invert(0%); }'
-        }
-    }
-    ;
-
-    applyingStyle(document, css);
-};
-
-
-// --- Changing --- //
-
-function changeColors(type) {
-    switch (type) {
-        case 'protanopia':
-            changeToProtanopia(document, type);
-            break;
-        case 'deuteranopia':
-            changeToDeuteranopia(document, type);
-            break;
-        case 'tritanopia':
-            changeToTritanopia(document, type);
-            break;
-        case 'protanomaly':
-            changeToProtanomaly(document, type);
-            break;
-        case 'deuteranomaly':
-            changeToDeuteranomaly(document, type);
-            break;
-        case 'tritanomaly':
-            changeToTritanomaly(document, type);
-            break;
-        case 'achromatopsia':
-            changeToAchromatopsia(document, type);
-            break;
-        case 'achromatomaly':
-            changeToAchromatomaly(document, type);
-            break;
-        default:
-            invertingColors(document, type);
-            break;
-    }
-}
-
-// ------ //
-
-
-// --- Reverting --- //
-
-function revertColors(document, type) {
-    switch (type) {
-        case 'protanopia':
-            revertProtanopia(document);
-            break;
-        case 'deuteranopia':
-            revertDeuteranopia(document);
-            break;
-        case 'tritanopia':
-            revertTritanopia(document);
-            break;
-        case 'protanomaly':
-            revertProtanomaly(document);
-            break;
-        case 'deuteranomaly':
-            revertDeuteranomaly(document);
-            break;
-        case 'tritanomaly':
-            revertTritanomaly(document);
-            break;
-        case 'achromatopsia':
-            revertAchromatopsia(document);
-            break;
-        case 'achromatomaly':
-            revertAchromatomaly(document);
-            break;
-        default:
-            break;
-    }
-}
-
-// ------ //
-
-// --- Applying Style --- //
 
 function applyingStyle(document, css) {
 
@@ -238,4 +58,4 @@ function applyingStyle(document, css) {
 
 // ------ //
 
-changeColors(typeSelected.typeSelected);
+changeColors(info);

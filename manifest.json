@@ -1,12 +1,11 @@
 {
   "manifest_version": 2,
-  "name": "Colorblinding - Accessibility Tool for Development",
-  "description": "This extension simulates the website as a color vision impaired person would see. So you, as a developer, can adjust the colors for their accessibility.",
+  "name": "Colorblinding",
+  "description": "This extension simulates the website as a color vision impaired person would see.",
   "version": "1.0",
   "background": {
     "persistent": false,
     "scripts": [
-      "jquery.min.js",
       "background.js"
     ]
   },

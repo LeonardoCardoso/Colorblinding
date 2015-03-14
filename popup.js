@@ -3,21 +3,14 @@ var lc1306 = jQuery.noConflict(true);
 
     $(function () {
 
-        function setSelected() {
-            var $radios = $('input:radio[name=type]');
-            if ($radios.is(':checked') === false) {
-                $radios.filter('[value=' + typeSelectedGlobal + ']').prop('checked', true);
-            }
-        }
-
         $(document).ready(function () {
             $('input[name="type"]:radio').change(
                 function () {
-
-                    var typeSelected = {typeSelected: $('input[name=type]:checked', '#cvd_radios').val()};
-                    typeSelectedGlobal = typeSelected;
+                    var info = {
+                        typeSelected: $('input[name=type]:checked', '#cvd_radios').val()
+                    };
                     chrome.tabs.executeScript({
-                        code: 'var typeSelected = ' + JSON.stringify(typeSelected)
+                        code: 'var info = ' + JSON.stringify(info)
                     }, function () {
                         chrome.tabs.executeScript({file: 'background.js'});
                     });
