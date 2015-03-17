@@ -25,11 +25,10 @@ function appendSVG(document) {
     document.getElementsByTagName('body')[0].appendChild(iDiv);
 }
 
-function changeColors(info) {
+function changeColors(type) {
     appendSVG(document);
     revertColors(document);
 
-    var type = info.typeSelected;
     var css = 'html {' +
         'filter: url(#' + type + '); -webkit-filter: url(#' + type + '); -moz-filter: url(#' + type + '); -o-filter: url(#' + type + '); -ms-filter: url(#' + type + '); ' +
         '}';
@@ -58,4 +57,18 @@ function applyingStyle(document, css) {
 
 // ------ //
 
-changeColors(info);
+function execute() {
+    chrome.storage.sync.get("value", function (obj) {
+        if (obj.value === null || obj.value === undefined) {
+            obj.value = "normal";
+            chrome.storage.sync.set({'value': obj.value});
+        }
+        changeColors(obj.value);
+    });
+}
+
+execute();
+
+chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+    execute();
+});
