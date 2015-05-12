@@ -7,7 +7,6 @@ An extension for Google Chrome (and Chromium) that simulates the website as a co
 So you, as a developer, can adjust the colors for their accessibility.
 
 
-
 Options
 -------
 
@@ -37,6 +36,12 @@ The latest release is always available on the Chrome Web Store  accessing by thi
 
 For more information, visit http://lab.leocardz.com/colorblinding
 
+
+Important
+------------
+
+- If the website already use a filter in its css, the elements might change its original location when applying Colorblinding. To get the back, just select the option <b>deactivate</b> and refresh the page if it doesn't do by itself.
+- Colorblinding works in all tabs and the filter is applied when the tab if <b>fully loaded<b>.
 
 Examples
 ------------
