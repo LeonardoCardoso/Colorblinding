@@ -4,19 +4,31 @@ var lc1306 = jQuery.noConflict(true);
 
     $(function () {
 
-        chrome.storage.sync.get("value", function (obj) {
+        chrome.storage.sync.get('colorblindingValue', function (obj) {
 
-            $("input[name=type][value=" + (obj.value === null || obj.value === undefined ? "normal" : obj.value ) + "]").prop('checked', true);
+            var noValue = obj.colorblindingValue === null || obj.colorblindingValue === undefined;
+            $("input[name=type][value=" + (noValue ? "deactive" : obj.colorblindingValue ) + "]").prop('checked', true);
+
+            if (obj.colorblindingValue !== 'deactivate' && !noValue) {
+                console.log("internal " + obj.colorblindingValue);
+                execute();
+            }
 
         });
 
         $('input[name="type"]:radio').change(
             function () {
 
-                chrome.storage.sync.set({'value': $('input[name=type]:checked', '#cvd_radios').val()}, function () {
-                    chrome.tabs.executeScript({file: 'background.js'});
-                });
+                var newValue = $('input[name=type]:checked', '#cvd_radios').val();
+                chrome.storage.sync.set({'colorblindingValue': newValue}, function () {
 
+                    if (newValue !== 'deactivate') {
+                        chrome.tabs.executeScript({file: 'background.js'});
+                    } else {
+                        chrome.tabs.executeScript({file: 'reload.js'});
+                    }
+
+                });
             }
         );
 

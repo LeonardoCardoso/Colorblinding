@@ -2,10 +2,12 @@
   "manifest_version": 2,
   "name": "Colorblinding",
   "description": "This extension simulates the website as a color vision impaired person would see.",
-  "version": "1.1",
+  "version": "1.2",
   "background": {
     "persistent": false,
     "scripts": [
+      "colorblinding.js",
+      "reload.js",
       "background.js"
     ]
   },
@@ -22,6 +24,7 @@
       "matches": ["<all_urls>"],
       "js": [
         "jquery.min.js",
+        "colorblinding.js",
         "popup.js"
       ]
     }
