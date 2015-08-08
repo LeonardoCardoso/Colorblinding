@@ -10,7 +10,7 @@ var lc1306 = jQuery.noConflict(true);
             $("input[name=type][value=" + (noValue ? "deactive" : obj.colorblindingValue ) + "]").prop('checked', true);
 
             if (obj.colorblindingValue !== 'deactivate' && !noValue) {
-                console.log("internal " + obj.colorblindingValue);
+                //console.log("internal " + obj.colorblindingValue);
                 execute();
             }
 
