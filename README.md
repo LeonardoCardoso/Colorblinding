@@ -46,15 +46,15 @@ Important
 Examples
 ------------
 
-![cb1](https://dl.dropboxusercontent.com/s/czsbyjgu5q7km7z/cb1.png)
+![cb1](http://i.imgur.com/tWI82MM.png)
 
-![cb2](https://dl.dropboxusercontent.com/s/jo6jpx1q8f8b2lf/cb2.png)
+![cb2](http://i.imgur.com/8QAPM0B.png)
 
-![cb3](https://dl.dropboxusercontent.com/s/97ahi1lg7uznqr4/cb3.png)
+![cb3](http://i.imgur.com/dyJIEDK.png)
 
-![cb4](https://dl.dropboxusercontent.com/s/54o1qvvyfpubq9z/cb4.png)
+![cb4](http://i.imgur.com/tWA2W6Z.png)
 
-![cb4](https://dl.dropboxusercontent.com/s/04s7hn40zh118bb/cb5.png)
+![cb4](http://i.imgur.com/1uZpYvR.png)
 
 
 
