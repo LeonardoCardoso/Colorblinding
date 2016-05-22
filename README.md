@@ -65,6 +65,9 @@ SVG data based on https://github.com/Altreus/colourblind
 
 Data matrices based on http://web.archive.org/web/20081014161121/http://www.colorjack.com/labs/colormatrix/
 
+## Contact
+Contact me either by Twitter [@leocardz](https://twitter.com/leocardz) or emailing me to [contact@leocardz.com](mailto:contact@leocardz.com).
+
 
 ## License
 
