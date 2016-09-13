@@ -34,8 +34,6 @@ Installation
 
 The latest release is always available on the Chrome Web Store  accessing by this link <a href="https://chrome.google.com/webstore/detail/colorblinding/dgbgleaofjainknadoffbjkclicbbgaa">Colorblinding</a>.
 
-For more information, visit http://lab.leocardz.com/colorblinding
-
 
 Important
 ------------
