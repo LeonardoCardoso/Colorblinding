@@ -38,7 +38,7 @@ function changeColors(type) {
 }
 
 function revertColors(document) {
-    var css = 'html { -webkit-filter: none; -moz-filter: none; -o-filter: none; -ms-filter: none; }';
+    var css = 'html { -webkit-filter: none; -moz-filter: none; -o-filter: none; -ms-filter: none; } #blockColorblindContent { display: none; }';
     applyingStyle(document, css);
 }
 
